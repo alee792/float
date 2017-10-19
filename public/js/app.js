@@ -1,12 +1,14 @@
 $('#register-button').click(() => {
     $('.registration').slideToggle();
     
-    // Change login to submit
+    // Change login to submit and form action to /register
     if ($('#login-button').text() == "Submit") {
         $('#login-button').text("Login");
+        $("#user-form").attr("action", "/login");
     }
     else {
         $('#login-button').text("Submit");
+        $("#user-form").attr("action", "/register");
     }
 
     // Change register to cancel
@@ -16,4 +18,30 @@ $('#register-button').click(() => {
     else {
         $('#register-button').text("Cancel");
     }
+
+    $('#register-button').toggleClass("is-info");
 });
+
+function submitUser() {
+    const loginData = {
+        email: $('#email').val(),
+        password: $('#password').val(),
+        name: $('#name').val(),
+        confirmPassword: $('#confirmPassword').val()
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: $('#user-form').attr("action"),
+        data: JSON.stringify(loginData),
+        dataType: 'json',
+        contentType: 'application/json',
+    })
+        .done(function(response){
+            console.log("Yay, logged in");
+        })
+        .fail(function(error) {
+            console.log("Oops")
+        })
+}
+

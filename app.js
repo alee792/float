@@ -19,7 +19,7 @@ const app = express();
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));
 app.use(bodyParser.json());
-app.use('/api', router);
+app.use('/', router);
 
 
 app.listen(config.port, function() {

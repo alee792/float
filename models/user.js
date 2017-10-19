@@ -10,6 +10,13 @@ var UserSchema = new mongoose.Schema({
     password: {
         type: String, 
         required: true
+    },
+    name: {
+        type: String
+    },
+    created_dttm: {
+        type: Date,
+        default: Date.now
     }
 });
 
