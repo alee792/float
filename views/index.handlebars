@@ -1,0 +1,62 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-content">
+            <form id="user-form" action="/login" method="POST">
+              <div class="field registration">
+                <p class="control has-icons-left">
+                  <input class="input" type="name" placeholder="Full Name" id="name">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-user"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input class="input" type="email" placeholder="Email" id="email">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fa fa-check"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control has-icons-left">
+                  <input class="input" type="password" placeholder="Password" id="password">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-lock"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field registration">
+                <p class="control has-icons-left">
+                  <input class="input" type="password" placeholder=" Confirm Password" id="confirmPassword">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-lock"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <button type="button" form="user-form" class="button is-success" id="login-button" onclick="submitUser()">
+                    Login
+                  </button>
+                  <button type="button" class="button is-info is-pulled-right" id="register-button">
+                    Sign Up
+                  </button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
+<script src="/js/app.js"></script>
