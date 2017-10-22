@@ -38,10 +38,10 @@ function submitUser() {
         contentType: 'application/json',
     })
         .done(function(response){
-            console.log("Yay, logged in");
+            console.log(response);
         })
         .fail(function(error) {
-            console.log("Oops")
+            console.log(error);
         })
 }
 

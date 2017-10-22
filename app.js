@@ -16,7 +16,7 @@ const eng = require('express-handlebars');
 // Connect to MongoDB and create/use database as configured
 mongoose.connection.openUri(`mongodb://${config.db.host}/${config.db.dbName}`);
 
-// Use sessions
+// Use sessions in memory for now
 app.use(session({
   secret: 'insecure',
   resave: true,
@@ -32,10 +32,14 @@ app.use(express.static(publicPath));
 app.use(bodyParser.json());
 app.use('/', router);
 
-app.get('*', (req, res, next) =>{
-  res.render('error');
+app.use( (err, req, res, next) => {
+  res.status(err.status || 500);
+  console.log(err.message);
+  res.render('error', {
+    message: err.message,
+    error: err
+  });
 });
-
 
 app.listen(config.port, function() {
   console.log(`${config.appName} is listening on port ${config.port}`);

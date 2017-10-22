@@ -3,24 +3,41 @@ const router = express.Router();
 const User = require('../models/user');
 
 // POST /login
-router.post('/login', function (req, res, next) {
-    res.send(req.body);
+router.post('/login', (req, res, next) => {
+  if (req.body.email && req.body.password) {
+    User.authenticate(req.body.email, req.body.password, (error, user) => {
+      if (error || !user) {
+        var err = new Error('Wrong email or password.');
+        err.status = 401;
+        return next(err);
+      } else {
+        req.session.userId = user._id
+        return res.redirect('/')
+      }
+    });
+  } else {
+    var err = new Error('Email and password are required.');
+    err.status = 401;
+    return next(err);
+  }
 });
 
 // POST /register
-router.post('/register', function (req, res, next) {
-  if (req.body.email && req.body.password) {
+router.post('/register', (req, res, next) => {
+  if (req.name && req.body.email 
+      && req.body.password === req.body.confirmPassword) {
     const userData = {
       name: req.body.name,
       email: req.body.email,
       password: req.body.password
     }
 
-    User.create(userData, function(error, user) {
+    User.create(userData, (error, user) => {
       if (error) {
         return next(error);
       } else {
-        return res.redirect('/home')
+        req.session.userId = user._id
+        return res.send("Good job, user created!")
       }
     });
   } else {
@@ -30,9 +47,33 @@ router.post('/register', function (req, res, next) {
   }
 });
 
+// GET /users
+router.get('/users', (req, res) => {
+  User.find({}, (err, users) => {
+    res.send(users);
+  });
+});
+
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', (req, res, next) => {
+  if (!req.session.userId) {
+    return res.render('login', { title: 'Express' });
+  }
+  User.findById(req.session.userId)
+    .exec( (error, user) => {
+      if (error) { 
+        return next(error);
+      } else {
+        return res.render('index');
+      }
+    });
+});
+
+router.get('*', (err, req, res, next) =>{
+  res.render('error', {
+    message: err.message,
+    error: err
+  });
 });
 
 module.exports = router;
