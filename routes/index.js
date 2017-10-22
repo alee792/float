@@ -1,6 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const session = require('express-session');
 const User = require('../models/user');
+const eng = require('express-handlebars');
+
+// Register handlebars as engine
+app.engine('handlebars', eng({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
 // POST /login
 router.post('/login', (req, res, next) => {
@@ -11,8 +17,10 @@ router.post('/login', (req, res, next) => {
         err.status = 401;
         return next(err);
       } else {
+        // Create session and return user to "home"
         req.session.userId = user._id
-        return res.redirect('/')
+        console.log(req.session.userId + " logged in")
+        return res.send("Logged in")
       }
     });
   } else {
@@ -24,7 +32,7 @@ router.post('/login', (req, res, next) => {
 
 // POST /register
 router.post('/register', (req, res, next) => {
-  if (req.name && req.body.email 
+  if (req.body.name && req.body.email 
       && req.body.password === req.body.confirmPassword) {
     const userData = {
       name: req.body.name,

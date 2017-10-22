@@ -38,9 +38,10 @@ function submitUser() {
         contentType: 'application/json',
     })
         .done(function(response){
-            console.log(response);
+            console.log("Logged In");
         })
         .fail(function(error) {
+            console.log("Failed Login");
             console.log(error);
         })
 }

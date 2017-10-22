@@ -19,6 +19,8 @@
     "morgan": "~1.9.0",
     "mustache-express": "^1.2.5",
     "node-twitter-api": "^1.8.0",
+    "nodemon": "^1.12.1",
     "serve-favicon": "~2.4.5"
-  }
+  },
+  "devDependencies": {}
 }
