@@ -13,9 +13,7 @@ router.post('/login', (req, res, next) => {
         return next(err);
       } else {
         // Create session and return user to "home"
-        req.session.userId = user._id
         req.session.user = user
-        console.log(req.session.userId + " logged in")
         res.send("Logged in")
       }
     });
@@ -46,14 +44,15 @@ router.post('/register', (req, res, next) => {
     const userData = {
       name: req.body.name,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      primary_twitter: req.body.primary_twitter
     }
 
     User.create(userData, (error, user) => {
       if (error) {
         return next(error);
       } else {
-        req.session.userId = user._id
+        req.session.user = user
         return res.send("Good job, user created!")
       }
     });
@@ -66,7 +65,7 @@ router.post('/register', (req, res, next) => {
 
 // GET /users
 router.get('/users', (req, res) => {
-  if (!req.session.userId) {
+  if (!req.session.user) {
     return res.render('login');
   }
   User.find({}, (err, users) => {
@@ -76,24 +75,10 @@ router.get('/users', (req, res) => {
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  if (!req.session.userId) {
+  if (!req.session.user) {
     return res.render('login');
   }
-  User.findById(req.session.userId)
-    .exec((error, user) => {
-      if (error) {
-        return next(error);
-      } else {
-        User.findById(req.session.userId)
-          .exec((error, user) => {
-            if (error) {
-              return next(error);
-            } else {
-              return res.render('index', { name: user.name });
-            }
-          });
-      }
-    });
+  return res.render('index');
 });
 
 router.get('*', (err, req, res, next) => {

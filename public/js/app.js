@@ -24,9 +24,10 @@ $('#register-button').click(() => {
 
 function submitUser() {
     const loginData = {
-        email: $('#email').val(),
-        password: $('#password').val(),
         name: $('#name').val(),
+        email: $('#email').val(),
+        primary_twitter: $('#primary_twitter').val(),
+        password: $('#password').val(),
         confirmPassword: $('#confirmPassword').val()
     };
 
