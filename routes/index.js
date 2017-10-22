@@ -14,6 +14,7 @@ router.post('/login', (req, res, next) => {
       } else {
         // Create session and return user to "home"
         req.session.userId = user._id
+        req.session.user = user
         console.log(req.session.userId + " logged in")
         res.send("Logged in")
       }
