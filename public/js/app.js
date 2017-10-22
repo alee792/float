@@ -34,7 +34,7 @@ function submitUser() {
         type: 'POST',
         url: $('#user-form').attr("action"),
         data: JSON.stringify(loginData),
-        dataType: 'json',
+        // dataType: 'json',
         contentType: 'application/json',
     })
         .done(function(response){

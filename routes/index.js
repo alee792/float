@@ -2,11 +2,6 @@ const express = require('express');
 const router = express.Router();
 const session = require('express-session');
 const User = require('../models/user');
-const eng = require('express-handlebars');
-
-// Register handlebars as engine
-app.engine('handlebars', eng({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
 
 // POST /login
 router.post('/login', (req, res, next) => {
@@ -20,7 +15,7 @@ router.post('/login', (req, res, next) => {
         // Create session and return user to "home"
         req.session.userId = user._id
         console.log(req.session.userId + " logged in")
-        return res.send("Logged in")
+        res.send("Logged in")
       }
     });
   } else {
@@ -30,10 +25,23 @@ router.post('/login', (req, res, next) => {
   }
 });
 
+// POST /logout
+router.get('/logout', (req, res, next) => {
+  if (req.session) {
+    req.session.destroy((err) => {
+      if (err) {
+        return next(err);
+      } else {
+        return res.redirect('/');
+      }
+    });
+  }
+})
+
 // POST /register
 router.post('/register', (req, res, next) => {
-  if (req.body.name && req.body.email 
-      && req.body.password === req.body.confirmPassword) {
+  if (req.body.name && req.body.email
+    && req.body.password === req.body.confirmPassword) {
     const userData = {
       name: req.body.name,
       email: req.body.email,
@@ -57,6 +65,9 @@ router.post('/register', (req, res, next) => {
 
 // GET /users
 router.get('/users', (req, res) => {
+  if (!req.session.userId) {
+    return res.render('login');
+  }
   User.find({}, (err, users) => {
     res.send(users);
   });
@@ -65,19 +76,26 @@ router.get('/users', (req, res) => {
 /* GET home page. */
 router.get('/', (req, res, next) => {
   if (!req.session.userId) {
-    return res.render('login', { title: 'Express' });
+    return res.render('login');
   }
   User.findById(req.session.userId)
-    .exec( (error, user) => {
-      if (error) { 
+    .exec((error, user) => {
+      if (error) {
         return next(error);
       } else {
-        return res.render('index');
+        User.findById(req.session.userId)
+          .exec((error, user) => {
+            if (error) {
+              return next(error);
+            } else {
+              return res.render('index', { name: user.name });
+            }
+          });
       }
     });
 });
 
-router.get('*', (err, req, res, next) =>{
+router.get('*', (err, req, res, next) => {
   res.render('error', {
     message: err.message,
     error: err

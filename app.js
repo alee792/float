@@ -23,6 +23,12 @@ app.use(session({
   saveUninitialized: false
 }));
 
+// Make user ID available in templates
+app.use( (req, res, next) => {
+  res.locals.currentUser = req.session.userId;
+  next();
+})
+
 // Register handlebars as engine
 app.engine('handlebars', eng({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
