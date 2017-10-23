@@ -18,7 +18,7 @@ var UserSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    primary_twitter: {
+    screen_name: {
         type: String,
         unique: true
     }

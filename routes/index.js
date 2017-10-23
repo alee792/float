@@ -13,8 +13,9 @@ router.post('/login', (req, res, next) => {
         return next(err);
       } else {
         // Create session and return user to "home"
-        req.session.user = user
-        res.send("Logged in")
+        delete req.session.password;
+        req.session.user = user;
+        res.send("Logged in");
       }
     });
   } else {
@@ -45,13 +46,14 @@ router.post('/register', (req, res, next) => {
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
-      primary_twitter: req.body.primary_twitter
+      screen_name: req.body.screen_name
     }
 
     User.create(userData, (error, user) => {
       if (error) {
         return next(error);
       } else {
+        delete req.session.password;
         req.session.user = user
         return res.send("Good job, user created!")
       }

@@ -28,7 +28,7 @@ function submitUser() {
     const loginData = {
         name: $('#name').val(),
         email: $('#email').val(),
-        primary_twitter: $('#primary_twitter').val(),
+        screen_name: $('#screen_name').val(),
         password: $('#password').val(),
         confirmPassword: $('#confirmPassword').val()
     };
