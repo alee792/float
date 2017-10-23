@@ -47,11 +47,53 @@
                 </article>
             </div>
             <div class="tile is-parent is-vertical">
-                <article class="tile is-child box">
+                <article class="tile is-child box" id="details">
                     <!-- Put any content you want -->
+                    <table class="table is-hoverable is-striped is-centered">
+                        <tbody>
+                            <tr>
+                                <th>Author</th>
+                                <td>The Real Deal</td>
+                            </tr>
+                            <tr>
+                                <th>Post Time</th>
+                                <td>10/22/2017 7:35 PM EST</td>
+                            </tr>
+                            <tr>
+                                <th>Demographic</th>
+                                <td>Males 18-26</td>
+                            </tr>
+                            <tr>
+                                <th>Context</th>
+                                <td>Yeah, we're working on it</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </article>
-                <article class="tile is-child box">
-                    <!-- Put any content you want -->
+                <article class="tile is-child box" id="feedback">
+                    <div class="field">
+                        <label class="label">Feedback</label>
+                        <div class="control">
+                            <textarea class="textarea" placeholder="Notes"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox"><small> I agree to the
+                                <a href="#">terms and conditions</a></small>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="field is-grouped is-pulled-right">
+                        <div class="control">
+                            <button class="button is-link">Float</button>
+                        </div>
+                        <div class="control">
+                            <button class="button is-warning">Sink</button>
+                        </div>
+                    </div>
                 </article>
             </div>
         </div>
