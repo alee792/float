@@ -61,14 +61,17 @@
             </article>
         </div>
     </div>
-    <div class="tile is-parent is-4">
+    <div class="tile is-parent is-4" id="profile">
         <article class="tile is-child box">
             <!-- Profile Box -->
             {{#if currentUser }}
             <h1 class="title"> {{ currentUser.name }} </h1>
             <h2 class="subtitle"> {{ currentUser.primary_twitter }}</h2>
-
             {{/if}}
+            <button class="button is-info" id="profile-toggle">Hide</button>
         </article>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
+<script src="/js/main.js"></script>
