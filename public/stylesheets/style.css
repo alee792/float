@@ -40,6 +40,11 @@ caption {
   background-image: -ms-linear-gradient(bottom, #00B7FF 35%, #fff 0%);
 }
 
+.content-preview img {
+  max-width: auto;
+  max-height: 12rem;
+}
+
 .registration {
   display: none;
 }
