@@ -11,8 +11,59 @@
 </head>
 
 <body>
+  <nav class="navbar is-transparent" role="navigration" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <span class="icon is-large is-left has-text-info">
+          <i class="fa fa-life-ring fa-2x"></i>
+        </span>
+        <p class="is-size-3 has-icons-left brand-title">FLOAT</p>
+      </a>
+      <a class="navbar-item is-hidden-desktop" href="https://twitter.com/" target="_blank">
+        <span class="icon" style="color: #55acee;">
+          <i class="fa fa-lg fa-twitter"></i>
+        </span>
+      </a>
+      <a class="navbar-item is-hidden-desktop" href="https://github.com.com/" target="_blank">
+        <span class="icon" style="color: #212121;">
+          <i class="fa fa-lg fa-github"></i>
+        </span>
+      </a>
+      <div class="navbar-burger burger" data-target="navMenuTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
 
-    {{{body}}}
+    <div class="navbar-end">
+      <div class="navbar-item is-hidden-touch">
+        <p class="control">
+          <a class="is-info button" target="_blank" href="https://twitter.com/">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+            <span>
+              Tweet
+            </span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </nav>
+
+  {{{body}}}
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>FLOAT</strong>  is a project by Anthony Lee.
+      </p>
+    </div>
+  </div>
+</footer>
 
 </body>
+
 </html>

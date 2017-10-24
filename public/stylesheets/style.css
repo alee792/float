@@ -1,13 +1,59 @@
+/* Overrides */
+@font-face {
+  font-family: 'lydian';
+  src: url('../webfonts/lydian.woff2');
+}
+
+@font-face {
+font-family: 'apercu-web';
+src: url('../webfonts/apercu-regular.woff2');
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'apercu-web', "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
 
+caption {
+  text-align: left;
+  font-weight: 700;
+}
+
+/* Custom */
+.blur-text {
+  color: transparent;
+  text-shadow: 0 0 1px #000;
+}
+
+.brand-title {
+   font-family: lydian, "serif";
+}
+
+.floating-fill {
+  background-image: linear-gradient(bottom, #00B7FF 35%, #fff 0%);
+  background-image: -o-linear-gradient(bottom, #00B7FF 35%, #fff 0%);
+  background-image: -moz-linear-gradient(bottom, #00B7FF 35%, #fff 0%);
+  background-image: -webkit-linear-gradient(bottom, #00B7FF 35%, #fff 0%);
+  background-image: -ms-linear-gradient(bottom, #00B7FF 35%, #fff 0%);
+}
+
 .registration {
   display: none;
 }
 
+
+/* Vertical Align Nonsense */
+.flex {
+  display: flex;
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.flex-end {
+  align-self: flex-end;
+}

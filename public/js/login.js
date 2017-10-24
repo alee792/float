@@ -42,6 +42,7 @@ function submitUser() {
     })
         .done(function (response) {
             console.log("Logged In");
+            window.location='/'
         })
         .fail(function (error) {
             console.log("Failed Login");
