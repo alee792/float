@@ -6,7 +6,9 @@
                     <div class="tile is-parent">
                         <article class="tile is-child box">
                             <table class="table is-hoverable is-striped is-centered full-width">
-                                <caption class="is-size-4">Details</caption>
+                                <caption class="is-size-4">
+                                    <strong>Details</strong>
+                                </caption>
                                 <tbody>
                                     <tr>
                                         <th>Author</th>
@@ -119,10 +121,42 @@
                 <article class="tile is-child box flex">
                     <!-- Profile Box -->
                     <div class="full-width" id="profile-box">
-                        {{#if currentUser }}
-                        <h1 class="title"> {{ currentUser.name }} </h1>
-                        <h2 class="subtitle"> {{ currentUser.screen_name }}</h2>
-                        {{/if}}
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4">{{ currentUser.name }}</p>
+                                <p class="subtitle is-6">{{ currentUser.screen_name }}</p>
+                            </div>
+                        </div>
+                        <br>
+                        <table class="table is-hoverable is-striped is-centered full-width">
+                            <tbody>
+                                <tr>
+                                    <th>Floats Today</th>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <th>Floats this Week</th>
+                                    <td>24</td>
+                                </tr>
+                                <tr>
+                                    <th>Average Floats/Day</th>
+                                    <td>12</td>
+                                </tr>
+                                <tr>
+                                    <th>Average Floats/Week</th>
+                                    <td>84</td>
+                                </tr>
+                                <tr>
+                                    <th>Percent Sunk</th>
+                                    <td>2%</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <button class="button is-info flex-end" id="profile-toggle">Hide</button>
                 </article>

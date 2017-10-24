@@ -38,31 +38,57 @@
 
     <div class="navbar-end">
       <div class="navbar-item is-hidden-touch">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="is-info button" target="_blank" href="https://twitter.com/">
+              <span class="icon">
+                <i class="fa fa-twitter"></i>
+              </span>
+              <span>
+                Tweet
+              </span>
+            </a>
+          </p>
+          <p class="control">
+            <a class="is-dark button" target="_blank" href="https://github.com/">
+              <span class="icon">
+                <i class="fa fa-github"></i>
+              </span>
+              <span>
+                Github
+              </span>
+            </a>
+          </p>
+        </div>
+      </div>
+      {{#if currentUser}}
+      <div class="navbar-item">
         <p class="control">
-          <a class="is-info button" target="_blank" href="https://twitter.com/">
+          <a class="is-danger button" href="/logout">
             <span class="icon">
-              <i class="fa fa-twitter"></i>
+              <i class="fa fa-sign-out"></i>
             </span>
             <span>
-              Tweet
+              Logout
             </span>
           </a>
         </p>
       </div>
+      {{/if}}
     </div>
   </nav>
 
   {{{body}}}
 
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <p>
-        <strong>FLOAT</strong>  is a project by Anthony Lee.
-      </p>
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          <strong>FLOAT</strong> is a project by Anthony Lee.
+        </p>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
 
