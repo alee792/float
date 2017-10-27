@@ -2,7 +2,7 @@
 	margin: 0 auto;
 	position: relative;
 	z-index: 1000;
-	width: 320px;
+	width: 100%;
 	height: 320px;
 	padding: 0;
 	list-style: none;
@@ -32,13 +32,6 @@
 }
 
 .stack__item img {
-	width: 100%;
-	display: block;
-	pointer-events: none;
-}
-
-
-.stack__item div {
 	width: 100%;
 	display: block;
 	pointer-events: none;
