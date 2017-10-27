@@ -6,54 +6,37 @@
                     <div class="tile is-parent">
                         <article class="tile is-child box">
                             {{!-- Candidate Post --}}
-                            <article class="media post">
-                                <figure class="media-left">
-                                    <p class="image is-64x64">
-                                        <img src="https://bulma.io/images/placeholders/128x128.png">
-                                    </p>
-                                </figure>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <p>
-                                            <strong>John Smith</strong>
-                                            <small>@johnsmith</small>
-                                            <small>31m</small>
-                                            <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna
-                                            eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus
-                                            odio quis feugiat facilisis.
-                                        </p>
+                            <div class="card">
+                                <div class="card-image">
+                                    <div class="filler">
+                                        <figure class="image is-4by3">
+                                            <img class="post-content" src="https://i.redditmedia.com/BAfPgIbMrfNVdC1CF6xITB-xWwy2IjhXi4y-1sPgzNs.jpg?w=640&s=1ad498f1b42bcecfd26a1ffcaa1b7f73"
+                                                alt="Placeholder image">
+                                        </figure>
                                     </div>
-                                    <nav class="level is-mobile">
-                                        <div class="level-left">
-                                            <a class="level-item">
-                                                <span class="icon is-small">
-                                                    <i class="fa fa-reply"></i>
-                                                </span>
-                                            </a>
-                                            <a class="level-item">
-                                                <span class="icon is-small">
-                                                    <i class="fa fa-retweet"></i>
-                                                </span>
-                                            </a>
-                                            <a class="level-item">
-                                                <span class="icon is-small">
-                                                    <i class="fa fa-heart"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </nav>
                                 </div>
-                            </article>
-                            {{!-- Use js to bind this card's height to the next "tallest" element --}}
-                            <div class="attached-content full-width">
-                                <h2 class="is-size-4">
-                                    <strong>Attached Content</strong>
-                                </h2>
-                                <nav class="level">
-                                    <div class="level-item full-width content-preview">
-                                        <img src="https://i.redditmedia.com/BAfPgIbMrfNVdC1CF6xITB-xWwy2IjhXi4y-1sPgzNs.jpg?w=640&s=1ad498f1b42bcecfd26a1ffcaa1b7f73">
+                                <div class="card-content">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <figure class="image is-48x48">
+                                                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                                            </figure>
+                                        </div>
+                                        <div class="media-content">
+                                            <p class="title is-4">John Smith</p>
+                                            <p class="subtitle is-6">@johnsmith</p>
+                                        </div>
                                     </div>
-                                </nav>
+
+                                    <div class="content">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                                        <a>@bulmaio</a>.
+                                        <a href="#">#css</a>
+                                        <a href="#">#responsive</a>
+                                        <br>
+                                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                                    </div>
+                                </div>
                             </div>
                         </article>
                     </div>
