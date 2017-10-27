@@ -31,6 +31,10 @@ caption {
    font-family: lydian, "serif";
 }
 
+.filler {
+  background-color: lightgrey;
+}
+
 .floating-fill {
   background-image: linear-gradient(bottom, #00B7FF 35%, #fff 0%);
   background-image: -o-linear-gradient(bottom, #00B7FF 35%, #fff 0%);
