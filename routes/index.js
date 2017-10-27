@@ -82,7 +82,10 @@ router.get('/', (req, res, next) => {
   if (!req.session.user) {
     return res.render('login');
   }
-  return res.render('index');
+  Post.find({}).lean().exec((err, posts) => {
+    console.log(posts)
+    return res.render('index', { posts: posts });
+  });
 });
 
 router.get('*', (err, req, res, next) => {
