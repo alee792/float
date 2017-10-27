@@ -1,11 +1,11 @@
 [
     {
-        "created_by": "Intern#10571",
+        "created_by": "Dog #10571",
         "tags": [
             "hasMedia"
         ],
         "post_candidate": {
-            "content": "Attaining Nirvana. #rover #nirvana #dogs #marketing",
+            "content": "Attaining Nirvana. #barkbox #nirvana #dogs #marketing",
             "urls": [
                 "https://i.redditmedia.com/BAfPgIbMrfNVdC1CF6xITB-xWwy2IjhXi4y-1sPgzNs.jpg?w=640&s=1ad498f1b42bcecfd26a1ffcaa1b7f73"
             ],
@@ -19,7 +19,9 @@
             ]
         },
         "post_plan": {
-            "post_account": "@RoverDotCom",
+            "post_account": "@barkbox",
+            "display_name": "BarkBox",
+            "avatar_image": "https://pbs.twimg.com/profile_images/459084479160516608/1LdscIIO_200x200.jpeg",
             "post_time": "11/12/2017 4:30PM"
         }
     },
@@ -38,6 +40,8 @@
         },
         "post_plan": {
             "post_account": "@MuseumModernArt",
+            "display_name": "Museum of Modern Art",
+            "avatar_image": "https://pbs.twimg.com/profile_images/870294980987891712/Px8wodX-_200x200.jpg",
             "post_time": "11/07/2017 12:17PM"
         }
     },
@@ -57,6 +61,8 @@
         },
         "post_plan": {
             "post_account": "@Airbnb",
+            "display_name": "Airbnb",
+            "avatar_image": "https://pbs.twimg.com/profile_images/885357566557003777/fFEwaJEV_200x200.jpg",
             "post_time": "11/20/2017 9:10AM"
         }
     }

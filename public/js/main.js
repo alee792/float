@@ -12,6 +12,28 @@ $(document).ready(() => {
 
     // Slick around the cards
     $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav1,.slider-nav2'
       });
-              
+
+      $('.slider-nav1').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        asNavFor: '.slider-for,.slider-nav2'
+      });
+             
+      $('.slider-nav2').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        // dots: true,
+        variableWidth: true,
+        focusOnSelect: true,
+        arrows: false,
+        asNavFor: '.slider-for,.slider-nav1',
+        // centerMode: true,
+      }); 
 });

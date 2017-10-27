@@ -4,7 +4,7 @@
   min-height: 0;
   min-width: 0;
   }
-  
+
 @font-face {
   font-family: 'lydian';
   src: url('../webfonts/lydian.woff2');
@@ -37,6 +37,10 @@ caption {
    font-family: lydian, "serif";
 }
 
+.card {
+  margin: .1rem;
+}
+
 .filler {
   background-color: lightgrey;
 }
@@ -51,6 +55,17 @@ caption {
 
 .card-media {
   margin: auto;
+}
+
+.preview-container {  
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.preview-item {
+  margin: .5rem;
 }
 
 #profile-toggle {

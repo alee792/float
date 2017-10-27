@@ -52,14 +52,22 @@ var PostSchema = new mongoose.Schema({
         audience: {
             type: String,
         },
-        //Any other additional conString
-        conString: {
+        //Any other additional context
+        context: {
             type: String,
         },
     },
     post_plan: {
         // The account that will be posting
         post_account: {
+            type: String,
+            required: true,
+        },
+        display_name: {
+            type: String,
+            required: true,
+        },
+        avatar_image: {
             type: String,
             required: true,
         },
