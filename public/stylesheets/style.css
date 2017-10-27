@@ -1,4 +1,10 @@
 /* Overrides */
+
+*{
+  min-height: 0;
+  min-width: 0;
+  }
+  
 @font-face {
   font-family: 'lydian';
   src: url('../webfonts/lydian.woff2');

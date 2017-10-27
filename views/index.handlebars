@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 <section class="section floating-fill">
     <div class="container">
         <div class="tile is-ancestor">
@@ -5,6 +7,7 @@
                 <div class="tile">
                     <div class="tile is-parent">
                         <article class="tile is-child box">
+                            <div class="card-holder slider-for">
                             {{!-- Candidate Post --}} {{#each posts}}
                                 <div class="card">
                                     <div class="card-image">
@@ -35,6 +38,7 @@
                                     </div>
                                 </div>
                             {{/each}}
+                            </div>
                         </article>
                     </div>
                     <div class="tile is-parent is-vertical">
@@ -155,6 +159,7 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
         <script src="/js/main.js"></script>
     </div>
 </section>

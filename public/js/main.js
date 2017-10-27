@@ -8,5 +8,10 @@ $(document).ready(() => {
         $('.card-media').css('height', 'auto');
     } else {
         $('.card-media').css('width', 'auto')
-    }
+    };
+
+    // Slick around the cards
+    $('.slider-for').slick({
+      });
+              
 });
