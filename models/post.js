@@ -63,6 +63,14 @@ var PostSchema = new mongoose.Schema({
             type: String,
             required: true,
         },
+        display_name: {
+            type: String,
+            required: true,
+        },
+        avatar_image: {
+            type: String,
+            required: true,
+        },
         // When the account is scheduled to post
         post_time: {
             type: String,

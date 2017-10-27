@@ -83,7 +83,6 @@ router.get('/', (req, res, next) => {
     return res.render('login');
   }
   Post.find({}).lean().exec((err, posts) => {
-    console.log(posts)
     return res.render('index', { posts: posts });
   });
 });

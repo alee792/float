@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/cd/stylesheets/component.css">
 <section class="section floating-fill">
     <div class="container">
         <div class="tile is-ancestor">
@@ -5,38 +6,49 @@
                 <div class="tile">
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            {{!-- Candidate Post --}}
-                            <div class="card">
-                                <div class="card-image">
-                                    <div class="filler">
-                                        <figure class="image is-4by3">
-                                            <img class="card-media" src="https://pbs.twimg.com/media/DKmQoGeVAAEFuqV.jpg"
-                                                alt="Placeholder image">
-                                        </figure>
-                                    </div>
-                                </div>
-                                <div class="card-content">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <figure class="image is-48x48">
-                                                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                                            </figure>
+                            <ul id="stack_slamet" class="stack stack--slamet">
+                                {{!-- Candidate Post --}} {{#each posts}}
+                                <li class="stack__item">
+                                    <div class="card">
+                                        <div class="card-image">
+                                            <div class="filler">
+                                                <figure class="image is-4by3">
+                                                    <img class="card-media" src="{{ this.post_candidate.urls.[0] }}" alt="Placeholder image">
+                                                </figure>
+                                            </div>
                                         </div>
-                                        <div class="media-content">
-                                            <p class="title is-4">John Smith</p>
-                                            <p class="subtitle is-6">@johnsmith</p>
-                                        </div>
-                                    </div>
+                                        <div class="card-content">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <figure class="image is-48x48">
+                                                        <img src="{{ this.post_plan.avatar_image }}" alt="Placeholder image">
+                                                    </figure>
+                                                </div>
+                                                <div class="media-content">
+                                                    <p class="title is-4">{{ this.created_by }}</p>
+                                                    <p class="subtitle is-6">{{ this.post_plan.post_account }}</p>
+                                                </div>
+                                            </div>
 
-                                    <div class="content">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                                        <a>@bulmaio</a>.
-                                        <a href="#">#css</a>
-                                        <a href="#">#responsive</a>
-                                        <br>
-                                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                                            <div class="content">
+                                                {{ this.post_candidate.content }}
+                                                <br>
+                                                <time>{{ this.post_plan.post_time }}</time>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </li>
+                                {{/each}}
+                            </ul>
+                            <div class="controls">
+                                <button class="cd-button button--sonar button--reject" data-stack="stack_slamet">
+                                    <i class="fa fa-times"></i>
+                                    <span class="text-hidden">Reject</span>
+                                </button>
+                                <button class="cd-button button--sonar button--accept" data-stack="stack_slamet">
+                                    <i class="fa fa-check"></i>
+                                    <span class="text-hidden">Accept</span>
+                                </button>
                             </div>
                         </article>
                     </div>
@@ -158,6 +170,9 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
+        <script src="/cd/js/classie.js"></script>
+        <script src="/cd/js/dynamics.min.js"></script>
+        <script src="/cd/js/main.js"></script>
         <script src="/js/main.js"></script>
     </div>
 </section>
