@@ -24,6 +24,7 @@ var UserSchema = new mongoose.Schema({
     }
 });
 
+// Authentication routine on login
 UserSchema.statics.authenticate = (email, password, callback) => {
     User.findOne({ email: email })
         .exec(function(error, user) {
@@ -44,6 +45,7 @@ UserSchema.statics.authenticate = (email, password, callback) => {
         })
 };
 
+// bcrypt passwords before save
 UserSchema.pre('save', function(next){
     var user = this;
     bcrypt.hash(user.password, 10, function(err, hash){
@@ -54,5 +56,25 @@ UserSchema.pre('save', function(next){
         next();
     });
 });
+
+
+// Export the model
 var User = mongoose.model('User', UserSchema);
 module.exports = User;
+
+// Seed the database
+User.count({}, function(err, count) {
+    if (err) {
+      throw err;
+    }
+    
+    if (count > 0) return ;
+  
+    const users = require('./user.seed.json');
+    User.create(users, function(err, newUsers) {
+      if (err) {
+        throw err;
+      }
+      console.log("DB seeded with user")
+    });
+  });

@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const session = require('express-session');
 const User = require('../models/user');
+const Post = require('../models/post');
+
 
 // POST /login
 router.post('/login', (req, res, next) => {

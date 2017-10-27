@@ -1,12 +1,6 @@
 const mongoose = require('mongoose');
 
 var FeedbackSchema = new mongoose.Schema({
-    id: {
-        type: String,
-        unique: true,
-        required: true,
-        trim: true
-    },
     post_id: {
         type: String,
         required: true,

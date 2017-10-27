@@ -1,0 +1,63 @@
+[
+    {
+        "created_by": "Intern#10571",
+        "tags": [
+            "hasMedia"
+        ],
+        "post_candidate": {
+            "content": "Attaining Nirvana. #rover #nirvana #dogs #marketing",
+            "urls": [
+                "https://i.redditmedia.com/BAfPgIbMrfNVdC1CF6xITB-xWwy2IjhXi4y-1sPgzNs.jpg?w=640&s=1ad498f1b42bcecfd26a1ffcaa1b7f73"
+            ],
+            "audience": "Super hip kids",
+            "context": "Fun post :) for the fans",
+            "hashtags": [
+                "#rover",
+                "#nirvana",
+                "#dogs",
+                "#marketing"
+            ]
+        },
+        "post_plan": {
+            "post_account": "@RoverDotCom",
+            "post_time": "11/12/2017 4:30PM"
+        }
+    },
+    {
+        "created_by": "Pablo Picasso",
+        "tags": [
+            "hasMedia"
+        ],
+        "post_candidate": {
+            "content": "“Art is a lie that makes us realize truth.”—Pablo Picasso, born #OTD in 1881 http://mo.ma/2i4ltH6",
+            "urls": [
+                "https://pbs.twimg.com/media/DM_if0-WkAA4iKB.jpg"
+            ],
+            "audience": "Tourists",
+            "context": "Building presence for our upcoming Picasso exhibit"
+        },
+        "post_plan": {
+            "post_account": "@MuseumModernArt",
+            "post_time": "11/07/2017 12:17PM"
+        }
+    },
+    {
+        "created_by": "Pablo Picasso",
+        "tags": [
+            "hasMedia"
+        ],
+        "post_candidate": {
+            "content": "Harvest honey with Asher. Suit and hive included. See more NYC #AirbnbExperiences, created and led by locals: http://abnb.co/nyc ",
+            "urls": [
+                "https://pbs.twimg.com/media/DKmQoGeVAAEFuqV.jpg"
+            ],
+            "audience": "People checking email/twitter after getting to the office.",
+            "context": "We want to highlight the human experience of travel, especially those off the beaten path.",
+            "hashtags": ["#AirbnbExperience"]
+        },
+        "post_plan": {
+            "post_account": "@Airbnb",
+            "post_time": "11/20/2017 9:10AM"
+        }
+    }
+]
