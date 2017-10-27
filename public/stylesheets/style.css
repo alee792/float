@@ -43,8 +43,7 @@ caption {
   background-image: -ms-linear-gradient(bottom, #00B7FF 35%, #fff 0%);
 }
 
-.post-content {
-  width: auto !important;
+.card-media {
   margin: auto;
 }
 
