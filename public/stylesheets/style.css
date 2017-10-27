@@ -79,6 +79,10 @@ caption {
   display: none;
 }
 
+.table {
+  margin-bottom: 0;
+}
+
 
 /* Vertical Align Nonsense */
 .flex {
