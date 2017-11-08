@@ -99,6 +99,27 @@ router.post('/api/feedback/', (req, res) => {
   });
 });
 
+router.delete('/api/feedback/:feedbackId', (req, res) =>{
+  const feedbackId = req.params.feedbackId;
+
+  Feedback.findById(feedbackId, (err, feedback) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json(err);
+    }
+    if (!feedback) {
+      return res.status(404).json({message: "Feedback not found"});
+    }
+
+    feedback.deleted = true;
+
+    feedback.save( (err, deletedFeedback) => {
+      res.json(deletedFeedback)
+    });
+  });
+
+});
+
 // GET to /feedback
 router.get('/feedback', (req, res) => {
   if (!req.session.user) {
