@@ -68,7 +68,7 @@ function submitFeedback(id) {
         contentType: 'application/json',
     })
         .done(function (response) {
-            window.location.href = '/'
+            notes: $('#notes').val("")
         })
         .fail(function (error) {
             console.log("Failed to submit");
