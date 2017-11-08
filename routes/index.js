@@ -115,6 +115,7 @@ router.delete('/api/feedback/:feedbackId', (req, res) =>{
 
     feedback.save( (err, deletedFeedback) => {
       res.json(deletedFeedback)
+      console.log(feedback)
     });
   });
 
@@ -125,8 +126,7 @@ router.get('/feedback', (req, res) => {
   if (!req.session.user) {
     return res.render('login');
   }
-  Feedback.find({'created_by': req.session.user._id}).populate("_post").exec((err, feedback) => {
-    console.log(feedback);
+  Feedback.find({'created_by': req.session.user._id, deleted: {$ne: true}}).populate("_post").exec((err, feedback) => {
     return res.render('feedback', {feedback: feedback});
   })
 

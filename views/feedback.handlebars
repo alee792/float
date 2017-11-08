@@ -30,12 +30,12 @@
                             <div class="media-content">
                                 <div class="content">
                                     <p>
-                                        <strong>Kayli Eunice </strong>  
+                                        <strong>Kayli Eunice </strong>
                                         <br> {{this.notes}}
                                         <br>
                                         <small>
                                             <a>Edit</a> ·
-                                            <a>Delete</a> · {{this.created_at}}</small>
+                                            <a onclick="deleteFeedbackClick('{{this._id}}')">Delete</a> · {{this.created_at}}</small>
                                     </p>
                                 </div>
                             </div>
@@ -44,8 +44,8 @@
                 </article>
             </div>
         </div>
-        <br>
-
-        {{/each}}
+        <br> {{/each}}
     </div>
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/feedback.js"></script>

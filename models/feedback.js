@@ -32,7 +32,11 @@ var FeedbackSchema = new mongoose.Schema({
     tags: {
         tag: {
             type: String,
-        }
+        },
+    },
+    deleted: {
+        type: Boolean,
+        default: false,
     },
     // Create proposed post object created by reviewers
 })
