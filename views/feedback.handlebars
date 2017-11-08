@@ -1,0 +1,34 @@
+<section class="section floating-fill">
+    <div class="container">
+        {{#each feedback}}
+        <div class="card django-card">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p class="is-size-5">
+                            <strong>{{ this.created_by }}</strong>
+                            <small>{{ this.created_at }}</small>
+                            <br> {{ this.notes }} </p>
+                    </div>
+                    <nav class="level is-mobile">
+                        <div class="level-left">
+                            {{!-- {% if user.pk == post.user.pk %} --}}
+                            <a href="{% url 'edit' pk=post.pk %}" class="level-item">
+                                <span class="icon is-small">
+                                    <i class="fa fa-edit"></i>
+                                </span>
+                            </a>
+                            {{!-- {% endif %} --}}                           
+                        </div>
+                    </nav>
+                </div>
+                <div class="media-right">
+                    {{!-- {% if user.pk == post.user.pk %} --}}
+                    <button class="delete"></button>
+                    {{!-- {% endif %} --}}
+                </div>
+            </article>
+        </div>
+        {{/each}}
+    </div>
+</section>
