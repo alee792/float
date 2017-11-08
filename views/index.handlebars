@@ -52,6 +52,10 @@
                                 {{#each posts}}
                                 <table class="table is-hoverable is-striped is-centered">
                                     <tbody>
+                                        <tr class="is-hidden">
+                                            <th>Post ID</th>
+                                            <td id="post_id">{{this._id}}</td>
+                                        </tr>
                                         <tr>
                                             <th>Author</th>
                                             <td>{{this.created_by}}</td>
@@ -74,11 +78,11 @@
                             </div>
                         </article>
                         <article class="tile is-child box is-flex" id="feedback">
-                            <div class="full-width" id="feedback-form">
+                            <form class="full-width" id="feedback-form" action="api/feedback/">
                                 <div class="field">
                                     <label class="label is-size-4">Feedback</label>
                                     <div class="control">
-                                        <textarea class="textarea" placeholder="Notes"></textarea>
+                                        <textarea class="textarea" id="notes" placeholder="Notes"></textarea>
                                     </div>
                                 </div>
                                 <nav class="level">
@@ -94,14 +98,14 @@
                                     </div>
                                     <div class="field is-grouped is-pulled-right flex-end">
                                         <div class="control">
-                                            <button class="button is-link">Float</button>
+                                            <button id="floatTrue" class="button is-link" form="user-form" onclick="submitFeedback(this.id)">Float</button>
                                         </div>
                                         <div class="control">
-                                            <button class="button is-warning">Sink</button>
+                                            <button id="floatFalse" class="button is-warning" form="user-form" onclick="submitFeedback(this.id)">Sink</button>
                                         </div>
                                     </div>
                                 </nav>
-                            </div>
+                            </form>
                         </article>
                     </div>
                 </div>

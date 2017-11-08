@@ -24,13 +24,16 @@ var FeedbackSchema = new mongoose.Schema({
     },
     flags: {
         flag: {
-            type: text,
+            type: String,
         }
     },
     tags: {
         tag: {
-            type: text,
+            type: String,
         }
     },
     // Create proposed post object created by reviewers
 })
+
+var Feedback = mongoose.model('Feedback', FeedbackSchema);
+module.exports = Feedback;

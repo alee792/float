@@ -3,6 +3,7 @@ const router = express.Router();
 const session = require('express-session');
 const User = require('../models/user');
 const Post = require('../models/post');
+const Feedback = require('../models/feedback');
 
 
 // POST /login
@@ -77,13 +78,33 @@ router.get('/users', (req, res) => {
   });
 });
 
+// POST to /api/feedback
+router.post('/api/feedback/', (req, res) => {
+  const feedbackData = {
+    notes: req.body.notes,
+    created_by: req.session.user._id,
+    post_id: req.body.post_id,
+    float: req.body.float,
+  };
+
+  console.log(feedbackData);
+
+  Feedback.create(feedbackData, (err, newFeedback) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json(err);
+    }
+
+    res.json(newFeedback);
+  });
+});
+
 /* GET home page. */
 router.get('/', (req, res, next) => {
   if (!req.session.user) {
     return res.render('login');
   }
   Post.find({}).lean().exec((err, posts) => {
-    console.log(posts)
     return res.render('index', { posts: posts });
   });
 });
