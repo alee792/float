@@ -21,7 +21,12 @@ var UserSchema = new mongoose.Schema({
     screen_name: {
         type: String,
         unique: true
-    }
+    },
+    avatar_image: {
+        type: String,
+        required: true,
+        default: 'https://bulma.io/images/placeholders/96x96.png'
+    },
 });
 
 // Authentication routine on login

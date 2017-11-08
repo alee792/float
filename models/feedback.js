@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 
 var FeedbackSchema = new mongoose.Schema({
-    post_id: {
+    _post: {
         type: String,
         required: true,
+        ref: 'Post'
     },
     created_at: {
         type: Date,
@@ -13,6 +14,7 @@ var FeedbackSchema = new mongoose.Schema({
     created_by: {
         type: String,
         required: true,
+        ref: 'User'
     },
     notes: {
         type: String,

@@ -83,7 +83,7 @@ router.post('/api/feedback/', (req, res) => {
   const feedbackData = {
     notes: req.body.notes,
     created_by: req.session.user._id,
-    post_id: req.body.post_id,
+    _post: req.body.post_id,
     float: req.body.float,
   };
 
@@ -98,6 +98,18 @@ router.post('/api/feedback/', (req, res) => {
     res.json(newFeedback);
   });
 });
+
+// GET to /feedback
+router.get('/feedback', (req, res) => {
+  if (!req.session.user) {
+    return res.render('login');
+  }
+  Feedback.find({'created_by': req.session.user._id}).populate("_post").exec((err, feedback) => {
+    console.log(feedback);
+    return res.render('feedback', {feedback: feedback});
+  })
+
+})
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
