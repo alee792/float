@@ -40,6 +40,16 @@ $(document).ready(() => {
 });
 
 function submitFeedback(id) {
+    
+    if ($('#notes').val() == "") {
+        window.alert("Sinks need notes! Let us know why this post doesn't make the cut.");
+        return;
+    }
+
+    if (!$("#consent:checked").is(":checked")) {
+        window.alert("Must consent to terms and conditions");
+        return;
+    }
 
     floatBool = (id === "floatTrue") ? true : false
 
