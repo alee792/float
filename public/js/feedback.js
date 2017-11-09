@@ -8,7 +8,7 @@ function deleteFeedbackClick(id) {
         })
             .done(function (response) {
                 console.log("feedback", id, "is DOOMED!!!!!!");
-                refreshFileList();
+                window.location.href = '/feedback'
             })
             .fail(function (error) {
                 console.log("I'm not dead yet!", error);
@@ -17,24 +17,31 @@ function deleteFeedbackClick(id) {
 }
 
 // Allow inline editing of comments
-$('.edit').on('click', function () {
+function editFeedbackClick(me, id) {
 
-    var $el = $(this).parent().siblings(".edit-content");
+    var $el = $(me).parent().siblings(".edit-content");
 
     var $input = $('<textarea class="textarea"/>').val($el.text()).css({ "font-style": "italic" });
     $el.replaceWith($input);
 
     var save = function () {
+
+        const feedbackData = {
+            notes: $input.val()
+        };
+
         var $p = $('<p class="edit-content" />').text($input.val());
         $input.replaceWith($p);
+
         $.ajax({
             type: 'PUT',
             url: '/api/feedback/' + id,
-            dataType: 'json',
+            data: JSON.stringify(feedbackData),
+            // dataType: 'json',
             contentType: 'application/json',
         })
             .done(function (response) {
-                refreshFileList();
+                console.log("Updated");
             })
             .fail(function (error) {
                 console.log("I didn't update!", error);
@@ -51,4 +58,4 @@ $('.edit').on('click', function () {
     */
     $input.one('blur', save).focus();
 
-});
+};

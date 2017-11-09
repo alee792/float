@@ -32,10 +32,10 @@
                                     <p>
                                         <strong>Kayli Eunice </strong>
                                         <br>
-                                        <span class="edit-content" data-editable>{{this.notes}}</span>
+                                        <span class="edit-content">{{this.notes}}</span>
                                         <br>
                                         <small>
-                                            <a class="edit" data-editable>Edit</a> ·
+                                            <a class="edit" onclick="editFeedbackClick(this, '{{this._id}}')">Edit</a> ·
                                             <a onclick="deleteFeedbackClick('{{this._id}}')">Delete</a> · {{this.created_at}}
                                         </small>
                                     </p>
