@@ -31,11 +31,13 @@
                                 <div class="content">
                                     <p>
                                         <strong>Kayli Eunice </strong>
-                                        <br> {{this.notes}}
+                                        <br>
+                                        <span class="edit-content" data-editable>{{this.notes}}</span>
                                         <br>
                                         <small>
-                                            <a>Edit</a> ·
-                                            <a onclick="deleteFeedbackClick('{{this._id}}')">Delete</a> · {{this.created_at}}</small>
+                                            <a class="edit" data-editable>Edit</a> ·
+                                            <a onclick="deleteFeedbackClick('{{this._id}}')">Delete</a> · {{this.created_at}}
+                                        </small>
                                     </p>
                                 </div>
                             </div>
