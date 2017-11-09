@@ -47,6 +47,7 @@ function submitUser() {
         .fail(function (error) {
             console.log("Failed Login");
             console.log(error);
+            window.alert("Something went wrong!");
         })
 }
 
