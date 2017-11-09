@@ -143,6 +143,8 @@ router.put('/api/feedback/:feedbackId',(req, res) => {
 })
 
 // GET to /feedback
+//TODO: Group by _post so that you don't get duplicate feedbacks
+//      Will also need to handle display of float/sink properly
 router.get('/feedback', (req, res) => {
   if (!req.session.user) {
     return res.render('login');

@@ -53,6 +53,14 @@ caption {
   background-image: -ms-linear-gradient(bottom, #00B7FF 35%, #fff 0%);
 }
 
+.float-card {
+  background: rgb(198, 234, 245);
+}
+
+.sink-card {
+  background: lightyellow;
+}
+
 .card-media {
   margin: auto;
 }

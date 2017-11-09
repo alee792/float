@@ -1,5 +1,5 @@
 module.exports = {
-    appName: 'Our Glorious Node Project',
+    appName: 'Float',
     port: 3030,
     db: {
       host: 'localhost',

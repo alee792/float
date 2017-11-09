@@ -1,7 +1,7 @@
 <section class="section floating-fill">
     <div class="container">
         {{#each feedback}}
-        <div class="card">
+        <div class="card {{#if this.float}} float-card {{else}} sink-card {{/if}}">
             <div class="card-content">
                 <article class="media">
                     <figure class="media-left">

@@ -1,3 +1,4 @@
+// Allow soft-deletion of feedback
 function deleteFeedbackClick(id) {
     if (confirm("Are you sure?")) {
         $.ajax({
@@ -48,14 +49,6 @@ function editFeedbackClick(me, id) {
             })
 
     };
-
-    /**
-      We're defining the callback with `one`, because we know that
-      the element will be gone just after that, and we don't want 
-      any callbacks leftovers take memory. 
-      Next time `p` turns into `input` this single callback 
-      will be applied again.
-    */
     $input.one('blur', save).focus();
 
 };

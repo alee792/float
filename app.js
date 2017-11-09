@@ -14,7 +14,7 @@ const session = require('express-session');
 const eng = require('express-handlebars');
 
 // Connect to MongoDB and create/use database as configured
-mongoose.connection.openUri(`mongodb://${config.db.host}/${config.db.dbName}`);
+mongoose.connection.openUri(`mongodb://mongo/${config.db.dbName}`);
 
 // Use sessions in memory for now
 app.use(session({
