@@ -68,10 +68,15 @@ function submitFeedback(id) {
         contentType: 'application/json',
     })
         .done(function (response) {
-            notes: $('#notes').val("")
+            notes: $('#notes').val("");
+            $('.modal').addClass("is-active");
         })
         .fail(function (error) {
             console.log("Failed to submit");
             console.log(error);
         });
+}
+
+function closeModal() {
+    $('.modal').removeClass("is-active");
 }
