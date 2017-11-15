@@ -77,6 +77,7 @@
                                 {{/each}}
                             </div>
                         </article>
+                        {{!-- Where the floating and sinking happens --}}
                         <article class="tile is-child box is-flex" id="feedback">
                             <form class="full-width" id="feedback-form" action="api/feedback/">
                                 <div class="field">
@@ -109,9 +110,9 @@
                         </article>
                     </div>
                 </div>
+                {{!-- Mockup of user profile box --}}
                 <div class="tile is-parent is-hidden-touch">
                     <article class="tile is-child box">
-                        <!-- Put any content you want -->
                         <div class="preview-container slider-nav slider-nav2">
                             {{#each posts}}
                             <div class="preview-item">
@@ -152,6 +153,10 @@
                         <br>
                         <table class="table is-hoverable is-striped is-centered full-width">
                             <tbody>
+                                <tr>
+                                    <a href="/feedback">
+                                        Click here to satisy the READ req</a>
+                                </tr>
                                 <tr>
                                     <th>Floats Today</th>
                                     <td>7</td>

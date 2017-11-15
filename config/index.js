@@ -3,6 +3,6 @@ module.exports = {
     port: 3030,
     db: {
       host: 'localhost',
-      dbName: 'fsjs',
+      dbName: 'mongo',
     }
   };
